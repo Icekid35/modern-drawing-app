@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Drawing App</title>
+    <!-- p5.js libraries -->
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+     
+    />
+    <!-- UI Panel Styles -->
+    <link href="./style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+    <div id="menu-toggle">
+      <i class="fa fa-bars"></i>
+    </div>
+    
+    <!-- Left UI Panel -->
+    <div id="ui-panel">
+      <h2>Controls</h2>
+      <div class="control-group">
+        <label for="brushSize">Brush Size</label>
+        <input type="range" id="brushSize" min="0" max="100" value="10" />
+      </div>
+      <div class="control-group">
+        <label for="shape">Shape</label>
+        <select id="shape">
+          <option>Ellipse</option>
+          <option>Rectangle</option>
+          <option>Triangle</option>
+          <option>Star</option>
+          <option>Heart</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="randomness">Randomness</label>
+        <input type="range" id="randomness" min="0" max="100" value="0" />
+      </div>
+      <div class="control-group">
+        <label for="color">Color</label>
+        <input type="color" id="color" value="#000000" />
+      </div>
+      <div class="control-group">
+        <label for="blendMode">Blend Mode</label>
+        <select id="blendMode">
+          <option>BLEND</option>
+          <option>DARKEST</option>
+          <option>LIGHTEST</option>
+          <option>DIFFERENCE</option>
+          <option>MULTIPLY</option>
+          <option>EXCLUSION</option>
+          <option>SCREEN</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="opacity">Opacity</label>
+        <input type="range" id="opacity" min="0" max="255" value="255" />
+      </div>
+      <div class="control-group">
+        <label><input type="checkbox" id="outline" /> Outline</label>
+      </div>
+      <div class="control-group">
+        <label for="outlineColor">Outline Color</label>
+        <input type="color" id="outlineColor" value="#000000" />
+      </div>
+      <div class="control-group">
+        <label for="outlineThickness">Outline Thickness</label>
+        <input type="range" id="outlineThickness" min="0" max="10" value="1" />
+      </div>
+      <button id="loadBackground">Load Background</button>
+      <button id="clearCanvas">Clear Canvas</button>
+    </div>
+
+    <!-- Toolbar Buttons overlaying the canvas -->
+    <div id="action-toolbar">
+      <div class="left-buttons">
+        <button id="btn-undo" title="Undo (Ctrl+Z)">
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button id="btn-redo" title="Redo (Ctrl+Y)">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+      
+        <button id="btn-particle" class="active" title="Toggle Particle Brush (P)">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        </button>
+        <button id="btn-hsymm" title="Toggle Horizontal Symmetry (H)">
+          <i class="fa-solid fa-arrows-left-right"></i>
+        </button>
+        <button id="btn-vsymm"  title="Toggle Vertical Symmetry (V)">
+          <i class="fa-solid fa-arrows-up-down"></i>
+        </button>
+      </div>
+      
+      <div class="right-buttons">
+        <button id="btn-save" title="Save (Ctrl+S)">
+          <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+        <button id="btn-theme" title="Toggle Theme (D)">
+          <i class="fa-solid fa-adjust"></i>
+        </button>
+        <button id="btn-layer" title="Toggle Layer (L). undo and redo changes on a different layer">
+          <i class="fa-solid fa-layer-group"></i>
+        </button>
+        <button id="btn-playback" title="Toggle Playback (K) Replay your drawing">
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+      
+    </div>
+
+    <!-- The p5.js sketch will create the canvas and append it to the body -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
