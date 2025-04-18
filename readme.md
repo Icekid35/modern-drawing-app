@@ -6,8 +6,8 @@ A powerful, browser-based drawing tool built using **p5.js**, **HTML**, and **CS
 ---
 
 ## 🚀 Live Demo
-> 🔗 [Click here to try the app live](#)  
-> *(Add your deployed link here when available)*
+> 🔗 [Click here to try the app live](https://modern-drawing-app.vercel.app/)  
+
 
 ---
 
